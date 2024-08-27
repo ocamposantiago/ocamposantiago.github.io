@@ -372,7 +372,6 @@ html {
   }
   .landingAbout {
     align-items: start;
-    flex-direction: column;
     gap: 12px;
   }
   .bio {
@@ -389,5 +388,23 @@ html {
     width: 100%;
     display: flex;
     flex-direction: column;
+  }
+
+  .landingContact p {
+    width: auto;
+    /* background-color: aliceblue; */
+    display: flex;
+    justify-content: center;
+  }
+  .message {
+    /* background-color: blue; */
+    display: flex;
+    align-items: flex-start;
+    height: 80%;
+    width: 100%;
+  }
+  .mail h1 {
+    font-size: 4.5vw;
+    /* background-color: aqua; */
   }
 }

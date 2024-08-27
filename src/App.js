@@ -117,6 +117,7 @@ function Contact() {
       <div className="landingContact">
         <p>003</p>
         <p>Contact</p>
+        <span className="spacer"></span>
         <div className="message">
           <p>Want to work together?</p>
           <p>Send me a message</p>
