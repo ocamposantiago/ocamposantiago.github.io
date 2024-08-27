@@ -5,7 +5,6 @@ function App() {
     <div className="App">
       <Home />
       <Projects />
-      {/* <ProjectDisplay /> */}
       <About />
       <Contact />
     </div>
