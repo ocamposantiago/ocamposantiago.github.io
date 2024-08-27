@@ -27,7 +27,7 @@ function Home() {
           <span className="spacer"></span>
           <span className="spacer"></span>
           <span className="spacer"></span>
-          <img src="./portfolio_photo.png" alt="Profile Pic" />
+          <img src="./public/portfolio_photo.png" alt="Profile Pic" />
         </div>
       </div>
     </div>
