@@ -18,13 +18,16 @@ function Home() {
         <p>Based in Buenos Aires, Argentina</p>
         <p>3D Generalist, Artist & Professor</p>
         <p className="name">Santiago Ocampo</p>
-        <p>Projects, About, Contact</p>
+        <p className="topMenu">Projects, About, Contact</p>
       </div>
       <div className="menu">
         <h1>PROJECTS.</h1>
         <h1>ABOUT.</h1>
         <h1>CONTACT.</h1>
         <div className="menuphoto">
+          <span className="spacer"></span>
+          <span className="spacer"></span>
+          <span className="spacer"></span>
           <img src="./portfolio_photo.png" alt="Profile Pic" />
         </div>
       </div>
@@ -88,13 +91,13 @@ function About() {
         <h1 className="bioEnjoy">
           I ENJOY: GAMING, MUSIC, RESEARCHING, LEARNING NEW SKILLS, 3D PRINTING
         </h1>
-        <iframe
+        {/* <iframe
           src="https://my.spline.design/untitled-e3fbad4906352c5a176c4b0e2913680e/"
           frameborder="0"
-          width="1060px"
-          height="548px"
+          width="80%"
+          height="30%"
           title="ProfilePic"
-        ></iframe>
+        ></iframe> */}
         <div className="tools">
           <p>Software & Tools:</p>
           <p>Blender 4.X</p>
@@ -102,7 +105,6 @@ function About() {
           <p>Touchdesigner</p>
           <p>Cables.GL</p>
           <p>Substance 3D Modeler</p>
-          <p>Meta Spark AR</p>
           <p>Figma</p>
           <p>Resolume Arena</p>
         </div>
@@ -116,14 +118,19 @@ function Contact() {
       <div className="landingContact">
         <p>003</p>
         <p>Contact</p>
-        <div className="infoContact">
+        <div className="message">
           <p>Want to work together?</p>
           <p>Send me a message</p>
-          <h1>SANTIAGO.OCAMPOMAIL@GMAIL.COM</h1>
-          <span className="spacer"></span>
-          <p>Santiago Ocampo 3D Generalist</p>
-          <p>Instagram, Behance</p>
-          <p className="designedBy">Design & Developmnet by Santiago Ocampo</p>
+          <div className="mail">
+            <h1>SANTIAGO.OCAMPOMAIL@GMAIL.COM</h1>
+          </div>
+          <div className="contactFooter">
+            <p>Santiago Ocampo 3D Generalist</p>
+            <p>Instagram, Behance</p>
+            <p className="designedBy">
+              Design & Developmnet by Santiago Ocampo
+            </p>
+          </div>
         </div>
       </div>
     </div>
