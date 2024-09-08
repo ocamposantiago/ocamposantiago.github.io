@@ -3,14 +3,26 @@ import "./index.css";
 
 const projectsData = [
   { pName: "NIKE", description: "Nike Project", photos: "./" },
-  { pName: "TELEFONICA", description: "Telefonica project", photos: "./" },
+  {
+    pName: "TELEFONICA",
+    description: "Telefonica project",
+    photos: "images/telefonica_",
+  },
   {
     pName: "ENACOM",
     description: "encaom VR experience",
     photos: "images/enacom_",
   },
-  { pName: "FORD", description: "FOrd internal projects", photos: "./" },
-  { pName: "PERSONAL", description: "Personal works", photos: "./" },
+  {
+    pName: "FORD",
+    description: "Ford internal projects",
+    photos: "images/ford_",
+  },
+  {
+    pName: "PERSONAL",
+    description: "Personal works",
+    photos: "images/persona_",
+  },
 ];
 
 // const projectsName = projectsData.map((item) => item.pName);
@@ -203,7 +215,7 @@ function ProjectDisplay({ project, onClose }) {
       <div className="pDisplayInfo">
         <p>{project.description}</p>
         <div className="galleryPhoto">
-          <img alt="photos" src={project.photos + `_${1}.png`} />
+          <img alt="photos" src={project.photos + `${1}.png`} />
         </div>
         <span className="spacer"></span>
         <p className="back">Back</p>
