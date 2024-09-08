@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/ocamposantiago-github-io/static/css/main.011639bd.css",
-    "main.js": "/ocamposantiago-github-io/static/js/main.dfd0cd33.js",
+    "main.css": "/ocamposantiago-github-io/static/css/main.fd5293cb.css",
+    "main.js": "/ocamposantiago-github-io/static/js/main.a5eac986.js",
     "static/media/RobotoFlex-VariableFont.ttf": "/ocamposantiago-github-io/static/media/RobotoFlex-VariableFont.459379f8e8d3e82cccd4.ttf",
     "index.html": "/ocamposantiago-github-io/index.html",
-    "main.011639bd.css.map": "/ocamposantiago-github-io/static/css/main.011639bd.css.map",
-    "main.dfd0cd33.js.map": "/ocamposantiago-github-io/static/js/main.dfd0cd33.js.map"
+    "main.fd5293cb.css.map": "/ocamposantiago-github-io/static/css/main.fd5293cb.css.map",
+    "main.a5eac986.js.map": "/ocamposantiago-github-io/static/js/main.a5eac986.js.map"
   },
   "entrypoints": [
-    "static/css/main.011639bd.css",
-    "static/js/main.dfd0cd33.js"
+    "static/css/main.fd5293cb.css",
+    "static/js/main.a5eac986.js"
   ]
 }
