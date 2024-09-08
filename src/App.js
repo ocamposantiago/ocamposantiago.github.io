@@ -1,10 +1,46 @@
+import { useState } from "react";
 import "./index.css";
 
+const projectsData = [
+  { pName: "NIKE", description: "Nike Project", photos: "./" },
+  { pName: "TELEFONICA", description: "Telefonica project", photos: "./" },
+  {
+    pName: "ENACOM",
+    description: "encaom VR experience",
+    photos: "images/enacom_",
+  },
+  { pName: "FORD", description: "FOrd internal projects", photos: "./" },
+  { pName: "PERSONAL", description: "Personal works", photos: "./" },
+];
+
+// const projectsName = projectsData.map((item) => item.pName);
+//const projectsDesc = projectsData.map((item) => item.description);
+
 function App() {
+  const [selectedProject, setSelectedProject] = useState(null);
+  const handleProjectClick = (projectName) => {
+    const project = projectsData.find((p) => p.pName === projectName);
+    setSelectedProject(project);
+  };
+  // Function to handle closing the project display
+  const handleCloseProjectDisplay = () => {
+    setSelectedProject(null);
+  };
   return (
     <div className="App">
       <Home />
-      <Projects />
+      {!selectedProject && (
+        <Projects
+          name={projectsData.map((item) => item.pName)}
+          onProjectClick={handleProjectClick}
+        />
+      )}
+      {selectedProject && (
+        <ProjectDisplay
+          project={selectedProject}
+          onClose={handleCloseProjectDisplay}
+        />
+      )}
       <About />
       <Contact />
     </div>
@@ -27,23 +63,29 @@ function Home() {
           <span className="spacer"></span>
           <span className="spacer"></span>
           <span className="spacer"></span>
-          <img src="./portfolio_photo.png" alt="Profile Pic" />
+          <img src="images/portfolio_photo.png" alt="Profile Pic" />
         </div>
       </div>
     </div>
   );
 }
-function Projects() {
+function Projects({ name, onProjectClick }) {
   return (
     <div className="container">
       <div className="landingProjects">
         <p>001</p>
         <p>Projects</p>
         <div className="projectsMenus">
-          <h1>NIKE</h1>
-          <h1>TELEFONICA</h1>
-          <h1>ENACOM</h1>
-          <h1>FORD</h1>
+          {name.map((projectName) => (
+            <h1 key={projectName} onClick={() => onProjectClick(projectName)}>
+              {projectName}
+            </h1>
+          ))}
+          {/* <h1>{name[0]}</h1>
+          <h1>{name[1]}</h1>
+          <h1>{name[2]}</h1>
+          <h1>{name[3]}</h1>
+          <h1>{name[4]}</h1> */}
         </div>
         <div className="projectsYear">
           <h1>2017</h1>
@@ -53,6 +95,8 @@ function Projects() {
           <h1>2023</h1>
           <div className="line"></div>
           <h1>2024</h1>
+          <div className="line"></div>
+          <h1>Present</h1>
         </div>
       </div>
       <div className="projectFooter">
@@ -117,7 +161,6 @@ function Contact() {
       <div className="landingContact">
         <p>003</p>
         <p>Contact</p>
-        <span className="spacer"></span>
         <div className="message">
           <p>Want to work together?</p>
           <p>Send me a message</p>
@@ -136,7 +179,9 @@ function Contact() {
     </div>
   );
 }
-function ProjectDisplay() {
+function ProjectDisplay({ project, onClose }) {
+  //const prjName = nike.pName;
+
   return (
     <div className="container">
       <div className="pDisplayTop">
@@ -146,31 +191,19 @@ function ProjectDisplay() {
         <span className="spacer"></span>
         <span className="spacer"></span>
         <span className="spacer"></span>
-        <p>X Close</p>
+        <p className="closeButton" onClick={onClose}>
+          X Close
+        </p>
       </div>
       <div className="pDisplayTitle">
         <div className="line"></div>
-        <h1>NIKE</h1>
+        <h1>{project.pName}</h1>
         <div className="line"></div>
       </div>
       <div className="pDisplayInfo">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-          pellentesque nibh tristique ex porta hendrerit. Vestibulum bibendum
-          leo metus, id consectetur ipsum sagittis sit amet. In aliquet dui mi,
-          et fringilla erat volutpat at. Phasellus vestibulum mollis justo.
-          Donec in neque eu diam dictum vehicula eget at sem. Aenean porta, nisi
-          eu auctor cursus, massa augue molestie elit, sit amet egestas ex magna
-          ut augue. Curabitur gravida nulla ut fringilla hendrerit. Nullam
-          sagittis congue turpis quis efficitur. Aenean a lorem sagittis,
-          pharetra tortor id, scelerisque ipsum. Donec diam purus, tristique
-          quis hendrerit non, imperdiet placerat dui. Mauris venenatis, libero
-          vitae molestie tincidunt, nisl arcu egestas ligula, sed convallis
-          mauris nibh eu nisi. Suspendisse lorem turpis, vulputate in nunc eu,
-          faucibus malesuada purus.
-        </p>
+        <p>{project.description}</p>
         <div className="galleryPhoto">
-          <img alt="photos" />
+          <img alt="photos" src={project.photos + `_${1}.png`} />
         </div>
         <span className="spacer"></span>
         <p className="back">Back</p>

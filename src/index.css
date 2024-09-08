@@ -88,7 +88,10 @@ html {
   margin: 0;
   padding: 0;
   text-align: left;
-  /* background-color: bisque; */
+  /* background-color: rgb(122, 66, 255); */
+}
+.menu :hover {
+  cursor: pointer;
 }
 .menuphoto {
   width: 100%;
@@ -115,15 +118,19 @@ html {
 .projectsMenus {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: start;
   /* width: 464px; */
   /* background-color: white; */
+}
+.projectsMenus :hover {
+  cursor: pointer;
 }
 .projectsMenus h1 {
   display: flex;
   align-items: center;
   width: 100%;
-  height: 128px;
+  height: auto;
   /* background-color: blue; */
   justify-content: left;
   font-size: 48px;
@@ -132,6 +139,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: end;
+  justify-content: center;
   width: 100%;
   /* background-color: white; */
 }
@@ -172,6 +180,10 @@ html {
 }
 .pDisplayTop p {
   width: 100%;
+  cursor: pointer;
+}
+.pDisplayTop p :hover {
+  cursor: pointer;
 }
 .pDisplayTitle {
   display: flex;
@@ -215,6 +227,7 @@ html {
   background-color: black;
   margin: 0;
 }
+
 .landingAbout {
   display: flex;
   flex-wrap: wrap;
@@ -256,12 +269,12 @@ html {
   width: 100%;
   height: 90%;
   display: flex;
-  align-items: start;
   flex-wrap: wrap;
   gap: 12px;
 }
 .landingContact p {
   width: 6vw;
+  /* background-color: yellow; */
 }
 .message {
   width: 70%;
@@ -342,6 +355,9 @@ html {
   .projectsMenus h1 {
     font-size: 6vw;
     /* height: 3vh; */
+  }
+  .projectsMenus {
+    justify-content: space-around;
   }
 
   .projectFooter {
