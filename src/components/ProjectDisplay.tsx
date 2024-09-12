@@ -1,6 +1,13 @@
+import { useEffect, useState } from "react";
 import type { ProjectsData } from "../projectsData";
 
 function ProjectDisplay({ project, onClose }: { project: ProjectsData, onClose: () => void}) {
+  const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    console.log({counter});
+  })
+
   return (
     <div className="container">
       <div className="pDisplayTop">
@@ -22,13 +29,17 @@ function ProjectDisplay({ project, onClose }: { project: ProjectsData, onClose: 
       <div className="pDisplayInfo">
         <p>{project.description}</p>
         <div className="galleryPhoto">
-          <img alt="photos" src={`${process.env.PUBLIC_URL}/` + project.photos + `${1}.png`} />
+          <img alt="photos" src={`${process.env.PUBLIC_URL}/` + project.photos + `${counter}.png`} />
         </div>
         <span className="spacer"></span>
-        <p className="back">Back</p>
+        <p className="back" onClick={() => {
+          setCounter(counter => counter - 1 < 0 ? project.amount - 1 : counter - 1)
+        }}>Back</p>
         <span className="spacer"></span>
         <span className="spacer"></span>
-        <p className="next">Next</p>
+        <p className="next" onClick={() => 
+          setCounter(counter => counter + 1 >= project.amount ? 0 : counter + 1)
+        }>Next</p>
       </div>
     </div>
   );
