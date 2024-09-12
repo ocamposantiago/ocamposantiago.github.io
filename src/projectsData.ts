@@ -8,7 +8,7 @@ export const projectsData: ProjectsData[] = [
   { 
     pName: "NIKE", 
     description: "Nike Project", 
-    photos: "./" 
+    photos: "" 
   },
   {
     pName: "TELEFONICA",
