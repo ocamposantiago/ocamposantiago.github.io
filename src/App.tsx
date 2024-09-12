@@ -1,43 +1,17 @@
+import React from "react";
 import { useState } from "react";
 import "./index.css";
-
-const projectsData = [
-  { pName: "NIKE", description: "Nike Project", photos: "./" },
-  {
-    pName: "TELEFONICA",
-    description: "Telefonica project",
-    photos: "images/telefonica_",
-  },
-  {
-    pName: "ENACOM",
-    description: "encaom VR experience",
-    photos: "images/enacom_",
-  },
-  {
-    pName: "FORD",
-    description: "Ford internal projects",
-    photos: "images/ford_",
-  },
-  {
-    pName: "PERSONAL",
-    description: "Personal works",
-    photos: "images/persona_",
-  },
-];
-
-// const projectsName = projectsData.map((item) => item.pName);
-//const projectsDesc = projectsData.map((item) => item.description);
+import { projectsData } from "./projectsData";
+import type { ProjectsData } from "./projectsData";
 
 function App() {
-  const [selectedProject, setSelectedProject] = useState(null);
-  const handleProjectClick = (projectName) => {
+  const [selectedProject, setSelectedProject] = useState<ProjectsData | undefined>(undefined);
+  
+  const handleProjectClick = (projectName: string) => {
     const project = projectsData.find((p) => p.pName === projectName);
     setSelectedProject(project);
   };
-  // Function to handle closing the project display
-  const handleCloseProjectDisplay = () => {
-    setSelectedProject(null);
-  };
+
   return (
     <div className="App">
       <Home />
@@ -50,7 +24,7 @@ function App() {
       {selectedProject && (
         <ProjectDisplay
           project={selectedProject}
-          onClose={handleCloseProjectDisplay}
+          onClose={() => setSelectedProject(undefined)}
         />
       )}
       <About />
@@ -58,6 +32,7 @@ function App() {
     </div>
   );
 }
+
 function Home() {
   return (
     <div className="container">
@@ -75,13 +50,14 @@ function Home() {
           <span className="spacer"></span>
           <span className="spacer"></span>
           <span className="spacer"></span>
-          <img src="images/portfolio_photo.png" alt="Profile Pic" />
+          <img src={`${process.env.PUBLIC_URL}/images/portfolio_photo.png`} alt="Profile Pic" />
         </div>
       </div>
     </div>
   );
 }
-function Projects({ name, onProjectClick }) {
+
+function Projects({ name, onProjectClick }: {name: string[], onProjectClick: (projectName: string) => void}) {
   return (
     <div className="container">
       <div className="landingProjects">
@@ -191,9 +167,7 @@ function Contact() {
     </div>
   );
 }
-function ProjectDisplay({ project, onClose }) {
-  //const prjName = nike.pName;
-
+function ProjectDisplay({ project, onClose }: { project: ProjectsData, onClose: () => void}) {
   return (
     <div className="container">
       <div className="pDisplayTop">
@@ -226,4 +200,5 @@ function ProjectDisplay({ project, onClose }) {
     </div>
   );
 }
+
 export default App;
