@@ -1,4 +1,10 @@
-function Projects({ name, onProjectClick }: {name: string[], onProjectClick: (projectName: string) => void}) {
+function Projects({
+  name,
+  onProjectClick,
+}: {
+  name: string[];
+  onProjectClick: (projectName: string) => void;
+}) {
   return (
     <div className="container">
       <div className="landingProjects">
@@ -48,4 +54,4 @@ function Projects({ name, onProjectClick }: {name: string[], onProjectClick: (pr
   );
 }
 
-export default Projects
+export default Projects;

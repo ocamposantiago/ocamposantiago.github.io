@@ -1,4 +1,3 @@
-
 function Home() {
   return (
     <div className="container">
@@ -16,7 +15,10 @@ function Home() {
           <span className="spacer"></span>
           <span className="spacer"></span>
           <span className="spacer"></span>
-          <img src={`${process.env.PUBLIC_URL}/images/portfolio_photo.png`} alt="Profile Pic" />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/portfolio_photo.png`}
+            alt="Profile Pic"
+          />
         </div>
       </div>
     </div>

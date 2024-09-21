@@ -3,12 +3,12 @@ export type ProjectsData = {
   description: string;
   photos: string;
   amount: number;
-}
+};
 
 export const projectsData: ProjectsData[] = [
-  { 
-    pName: "NIKE", 
-    description: "Nike Project", 
+  {
+    pName: "NIKE",
+    description: "Nike Project",
     photos: "",
     amount: 0,
   },
